@@ -10,4 +10,4 @@ Tu nombre de usuario es "{{person.user.username}}" y tu contraseña es "{{passwo
 
 Aplicación móvil
 ¿Sabías que hay una app desde la que gestionar tus movimientos con la moneda social de forma más cómoda? ¡Pruébala!
-Enlace a la app: https://play.google.com/store/apps/details?id=net.mercadosocial.moneda
+Enlace a la app: https://play.google.com/store/apps/details?id=com.acpp.henar
