@@ -10,7 +10,7 @@ def send_template_email(title, destination, template_name, template_params):
     send_mail(
         title,
         msg_plain,
-        'noreply@mercadosocial.net',
+        'noreply@acpp.com',
         [destination],
         html_message=msg_html,
     )
