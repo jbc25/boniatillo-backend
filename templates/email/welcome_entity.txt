@@ -1,6 +1,6 @@
 {% load settings_value %}
 
-Bienvenid@ al Boniatillo!
+Bienvenid@ al Henar!
 Hola, {{entity.name}}!
 Recibes este email porque se ha registrado una entidad con este email en la aplicación del Boniatillo.
 Desde este momento, puedes acceder a tu panel de usuario y configurar el perfil de tu entidad y tus ofertas, así como gestionar tu uso de la moneda social.

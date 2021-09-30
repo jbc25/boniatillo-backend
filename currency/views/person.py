@@ -120,7 +120,7 @@ def add_person(request):
             send_email = form.cleaned_data['send_welcome_email']
             if send_email:
                 helpers.mailing.send_template_email(
-                    'Bienvenid@ a la app del Boniatillo',
+                    'Bienvenid@ a la app del Henar',
                     person.email,
                     'welcome_person',
                     {'person': person, 'password': new_user_password}

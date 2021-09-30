@@ -1,7 +1,7 @@
 {% load settings_value %}
 
-Bienvenid@ al Boniatillo!
-Hola, {{person.full_name}}!
+¡Bienvenid@ al Henar!
+Hola {{person.full_name}},
 Recibes este email porque se ha registrado una entidad con este email en la aplicación del Mercado Social de Madrid.
 Desde este momento, puedes acceder a tu panel de usuario y configurar el perfil de tu entidad y tus ofertas, así como gestionar tu uso de la moneda social.
 
