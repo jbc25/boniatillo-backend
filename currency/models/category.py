@@ -20,3 +20,6 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name if self.name else ''
+
+    def __str__(self):
+        return self.__unicode__()

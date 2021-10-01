@@ -49,11 +49,15 @@ class Person(models.Model):
         full_name = self.full_name.strip()
         return self.user.username if not full_name else full_name
 
+    def __str__(self):
+        return self.__unicode__()
+
+
 # Method to add every user with a related person to the persons group
 @receiver(post_save, sender=Person)
 def add_user_to_group(sender, instance, created, **kwargs):
 
     if created:
         print('Adding user to persons group')
-        group = Group.objects.get(name='persons')
+        group, g_created = Group.objects.get_or_create(name='persons')
         instance.user.groups.add(group)

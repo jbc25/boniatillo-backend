@@ -83,7 +83,10 @@ class Entity(models.Model):
         ordering = ['registered']
 
     def __unicode__(self):
-        return self.name if self.name else 'Entidad'
+        return self.name if self.name else self.user.username
+
+    def __str__(self):
+        return self.__unicode__()
 
 
 # Method to add every user with a related entity to the entities group
@@ -92,7 +95,7 @@ def add_user_to_group(sender, instance, created, **kwargs):
 
     if created:
         print('Adding user to entities group')
-        group = Group.objects.get(name='entities')
+        group, g_created = Group.objects.get_or_create(name='entities')
         instance.user.groups.add(group)
 
         if not instance.gallery:
