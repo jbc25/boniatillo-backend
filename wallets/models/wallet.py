@@ -41,6 +41,9 @@ class Wallet(models.Model):
         else:
             return 'Unknown wallet'
 
+    def __str__(self):
+        return self.__unicode__()
+
     def set_type(self, type='default'):
         if not type:
             type = 'default'

@@ -78,3 +78,6 @@ class Offer(models.Model):
 
     def __unicode__(self):
         return self.title if self.title else str(self.published_date)
+
+    def __str__(self):
+        return self.__unicode__()

@@ -25,6 +25,9 @@ class Activity(models.Model):
     def __unicode__(self):
         return self.name if self.name else ''
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class PersonActivity(models.Model):
 
@@ -47,6 +50,9 @@ class PersonActivity(models.Model):
             display += self.activity.name if self.activity.name else ''
 
         return display
+
+    def __str__(self):
+        return self.__unicode__()
 
 
 CURRENCY_PER_HOUR = 5.00
