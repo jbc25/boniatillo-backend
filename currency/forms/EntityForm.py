@@ -3,11 +3,14 @@ from ckeditor.widgets import CKEditorWidget
 from django import forms
 from django.contrib.auth.models import User
 from django.db.models import BLANK_CHOICE_DASH
+from django.contrib.auth.validators import UnicodeUsernameValidator, ASCIIUsernameValidator
 
 from currency.models import Entity
 
 
 class EntityForm(forms.ModelForm):
+    # username_validators = [UnicodeUsernameValidator(), ASCIIUsernameValidator()]
+    username_validators = []
 
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('label_suffix', '')
@@ -15,7 +18,7 @@ class EntityForm(forms.ModelForm):
 
     owner_id = forms.CharField(max_length=100, widget=forms.HiddenInput, required=False)
     is_new_entity = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput())
-    new_user_username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=False)
+    new_user_username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=False, validators=username_validators)
     new_user_first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=False)
     new_user_last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=False)
     new_user_email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}), required=False)

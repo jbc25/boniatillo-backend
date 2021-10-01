@@ -4,9 +4,12 @@ from django.contrib.auth.models import User
 from django.db.models import BLANK_CHOICE_DASH
 
 from currency.models import Person
+from django.contrib.auth.validators import UnicodeUsernameValidator, ASCIIUsernameValidator
 
 
 class PersonForm(forms.ModelForm):
+    # username_validators = [UnicodeUsernameValidator(), ASCIIUsernameValidator()]
+    username_validators = []
 
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('label_suffix', '')
@@ -14,7 +17,7 @@ class PersonForm(forms.ModelForm):
 
     owner_id = forms.CharField(max_length=100, widget=forms.HiddenInput, required=False)
     is_new_person = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput())
-    new_user_username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=False)
+    new_user_username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=False, validators=username_validators)
     new_user_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}), required=False)
 
     send_welcome_email = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class':'custom-control-input', 'checked': True}), required=False,
