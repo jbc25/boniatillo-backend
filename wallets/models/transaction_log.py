@@ -16,11 +16,13 @@ class TransactionLogManager(models.Manager):
         if wallet == transaction.wallet_from:
             amount *= -1
             if transaction.wallet_to.user:
-                user_type, instance = transaction.wallet_to.user.get_related_entity()
-                name = instance.name
+                # user_type, instance = transaction.wallet_to.user.get_related_entity()
+                # name = instance.name
+                name = transaction.wallet_to.user
         elif transaction.wallet_from and transaction.wallet_from.user:
-            user_type, instance = transaction.wallet_from.user.get_related_entity()
-            name = instance.name
+            # user_type, instance = transaction.wallet_from.user.get_related_entity()
+            # name = instance.name
+            name = transaction.wallet_from.user
 
         return self.create(
             wallet=wallet,
