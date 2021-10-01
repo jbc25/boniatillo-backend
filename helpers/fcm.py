@@ -8,6 +8,8 @@ def notify_user(user, data, title=None, message=None, silent=True):
         If the message is silent, title and message are included in the data dictionary
     '''
 
+    return
+
     if not user:
         return
 
@@ -37,6 +39,8 @@ def broadcast_notification(users=None, data=None, title=None, body=None, silent=
         Sends an FCM notification to a user
         If the message is silent, title and message are included in the data dictionary
     '''
+
+    return
 
     devices = FCMDevice.objects.all()
     if users is not None:
