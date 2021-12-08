@@ -116,8 +116,8 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-STATIC_ROOT = ROOT_DIR + '/static'
-MEDIA_ROOT = ROOT_DIR + '/media'
+STATIC_ROOT = ROOT_DIR + '/static/henar'
+MEDIA_ROOT = ROOT_DIR + '/media/henar'
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 LOGIN_URL = '/login/'

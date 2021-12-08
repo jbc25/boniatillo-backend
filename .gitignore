@@ -4,3 +4,4 @@
 .envrc
 RUN
 henar.pid
+/boniatos/settings_secret_henar.py
