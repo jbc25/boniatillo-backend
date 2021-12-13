@@ -32,4 +32,4 @@ class Transaction(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return "%s -> %.2f" % (self.concept, round(self.var, 2))
+        return "%s -> %.2f" % (self.concept, round(self.amount, 2))
