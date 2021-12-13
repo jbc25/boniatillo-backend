@@ -30,3 +30,6 @@ class Transaction(models.Model):
         verbose_name = 'Transacción'
         verbose_name_plural = 'Transacciones'
         ordering = ['timestamp']
+
+    def __str__(self):
+        return "%s -> %.2f" % (self.concept, round(self.var, 2))
