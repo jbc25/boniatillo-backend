@@ -121,7 +121,7 @@ def add_entity(request):
             send_email = form.cleaned_data['send_welcome_email']
             if send_email:
                 helpers.mailing.send_template_email(
-                    'Bienvenid@ a la app del Henar',
+                    'Bienvenid@ a la app del Henar TSM',
                     entity.email,
                     'welcome_entity',
                     {'entity': entity}
